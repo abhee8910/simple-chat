@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/auth';
+// Read from environment variable, fallback to localhost in dev
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/auth';
 
 export const register = async (userId, username, password) => {
   try {
